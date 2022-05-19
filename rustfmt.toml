@@ -5,5 +5,5 @@ comment_width = 100
 wrap_comments = true
 binop_separator = "Back"
 trailing_comma = "Vertical"
-trailing_semicolon = false
+trailing_semicolon = true
 use_field_init_shorthand = true
