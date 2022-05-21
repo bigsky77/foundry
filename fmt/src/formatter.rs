@@ -7,7 +7,8 @@ use itertools::Itertools;
 use solang_parser::pt::*;
 
 use crate::{
-    loc::LineOfCode,
+    helpers, 
+    solang_ext::*,
     visit::{ParameterList, VResult, Visitable, Visitor},
 };
 
@@ -232,8 +233,6 @@ impl<'a, W: Write> Visitor for Formatter<'a, W> {
         let mut source_unit_parts_iter = source_unit.0.iter_mut().peekable();
         while let Some(unit) = source_unit_parts_iter.next() {
             let is_pragma =
-                |u: &SourceUnitPart| matches!(u, SourceUnitPart::PragmaDirective(_, _, _, _));
-            let is_import = |u: &SourceUnitPart| matches!(u, SourceUnitPart::ImportDirective(_, _));
             let is_error = |u: &SourceUnitPart| matches!(u, SourceUnitPart::ErrorDefinition(_));
             let is_declaration =
                 |u: &SourceUnitPart| !(is_pragma(u) || is_import(u) || is_error(u));

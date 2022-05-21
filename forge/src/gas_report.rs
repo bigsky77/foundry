@@ -130,7 +130,7 @@ impl Display for GasReport {
 
             table.add_row(vec![
                 Cell::new("Function Name").add_attribute(Attribute::Bold).fg(Color::Magenta),
-                Cell::new("Hello From the Other Side").add_attribute(Attribute::Bold).fg(Color::Green),
+                Cell::new("min").add_attribute(Attribute::Bold).fg(Color::Green),
                 Cell::new("avg").add_attribute(Attribute::Bold).fg(Color::Yellow),
                 Cell::new("median").add_attribute(Attribute::Bold).fg(Color::Yellow),
                 Cell::new("max").add_attribute(Attribute::Bold).fg(Color::Red),
